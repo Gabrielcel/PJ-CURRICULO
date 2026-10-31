@@ -1,0 +1,76 @@
+* { box-sizing: border-box; }
+
+:root {
+  color: #111;
+  background: #ececec;
+  font-family: "Courier New", Courier, monospace;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 32px 16px;
+  background: #ececec;
+}
+
+a { color: inherit; }
+
+.resume {
+  width: min(100%, 820px);
+  min-height: 1060px;
+  margin: 0 auto;
+  padding: 42px 34px;
+  display: grid;
+  grid-template-columns: minmax(0, 2.05fr) minmax(220px, 1fr);
+  background: #fff;
+  box-shadow: 0 3px 18px rgb(0 0 0 / 12%);
+}
+
+.resume__main { padding-right: 0; }
+.profile { display: flex; align-items: center; gap: 21px; min-height: 56px; }
+.profile__monogram {
+  width: 56px; height: 56px; flex: 0 0 56px;
+  display: grid; place-items: center; background: #d1e72e;
+  font-family: Arial, sans-serif; font-size: 22px; font-weight: 900; letter-spacing: -1.5px;
+}
+.profile__intro h1 { margin: 0 0 8px; font-size: 13px; line-height: 1; font-weight: 700; }
+.profile__intro p { margin: 0; font-size: 9px; line-height: 1.4; }
+.summary { margin: 27px 16px 25px 0; font-size: 9.5px; line-height: 1.35; }
+h2 { font-size: 11px; letter-spacing: 1.5px; }
+.experience h2 { margin: 0 0 22px 2px; }
+.job { margin: 0 16px 25px 0; font-size: 9.5px; line-height: 1.35; }
+.job h3 { margin: 0 0 10px; font-size: 9.5px; line-height: 1.4; }
+.job ul { margin: 0; padding-left: 14px; }
+.job li { margin-bottom: 3px; }
+.resume__sidebar { border-left: 1px solid #888; display: flex; flex-direction: column; min-width: 0; }
+.education, .skills { padding: 0 0 0 12px; }
+.education h2 { margin: 29px 0 18px; }
+.education__item { margin-bottom: 28px; font-size: 9px; line-height: 1.45; }
+.education__item h3 { margin: 0 0 14px; font-size: 9px; }
+.education__item p { margin: 0 0 9px; }
+.education__item ul, .skills ul { margin: 0; padding-left: 13px; }
+.skills h2 { margin: 8px 0 14px; }
+.skills { font-size: 9px; line-height: 1.7; }
+.contacts { border-top: 1px solid #aaa; margin-top: auto; padding: 35px 0 0 12px; min-height: 200px; font-size: 9px; overflow-wrap: anywhere; }
+.contacts h2 { margin: 0 0 18px; }
+.contacts p { margin: 0 0 7px; }
+.contacts strong { font-size: 8px; }
+
+@media (max-width: 600px) {
+  body { padding: 16px 10px; }
+  .resume { min-height: 0; grid-template-columns: 1fr; padding: 28px 22px; }
+  .resume__sidebar { border-left: 0; border-top: 1px solid #888; margin-top: 12px; }
+  .education, .skills { padding-left: 0; }
+  .education h2 { margin: 20px 0; }
+  .education__item { margin-bottom: 24px; }
+  .contacts { min-height: 0; margin-top: 25px; padding: 24px 0 0; }
+}
+
+@media print {
+  :root, body { background: #fff; }
+  body { padding: 0; }
+  .resume { width: 100%; min-height: 100vh; box-shadow: none; }
+}
